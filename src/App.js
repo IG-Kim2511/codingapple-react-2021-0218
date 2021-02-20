@@ -17,6 +17,11 @@ function App() {
   //   setTitle(newArray);
   // }
 
+
+  {/* 5 */}
+  const [modalVar, setmodalVar] = useState(false);
+
+
   return (
     <div className="App">
       <div className="black-nav">
@@ -35,12 +40,17 @@ function App() {
         <p>2월 18일 발행</p>        
       </div>      
       <div className="list">
-        <h3>{ title[2] }</h3>
+        <h3 onClick={()=>{ setmodalVar(true)}}>{ title[2] }</h3>
         <p>2월 19일 발행</p>        
       </div>      
 
        {/* 4 */}
-      <Modal></Modal>
+       {/* 5 */}
+      {
+        modalVar ===true
+        ?<Modal></Modal>
+        :null        
+      }
 
     </div>
   );
