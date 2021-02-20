@@ -46,7 +46,7 @@ function App() {
       {
         title.map(function(a,i){
           return <div className="list">
-          <h3 >{ title[i] }</h3>
+          <h3 >{a}</h3>
           <button onClick={()=>{setThumb(thumb+1)}}>👍</button> {thumb}
           <p>Feb 20</p>        
         </div>   
