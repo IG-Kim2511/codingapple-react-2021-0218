@@ -8,6 +8,8 @@ function App() {
   
   let [title, setTitle] = useState(['남자 코트 추천', '강남 우동 맛집', '파이썬 독학']);
   let posts = '강남 고기 맛집';
+
+    {/* 1 */}
   const [thumb, setThumb] = useState(0);
 
   {/* 2 */}
@@ -31,26 +33,26 @@ function App() {
       {/* 2 */}
       {/* <button onClick={titleChange}>btn</button> */}
 
-      <div className="list">
-        <h3>{ title[0] } <button onClick={()=>{setThumb(thumb+1)}}>👍</button> {thumb} </h3>
-        <p>2월 17일 발행</p>        
-      </div>      
-      <div className="list">
-        <h3>{ title[1] }</h3>
-        <p>2월 18일 발행</p>        
-      </div>      
-      <div className="list">
-        <h3 onClick={()=>{ setmodalVar(true)}}>{ title[2] }</h3>
-        <p>2월 19일 발행</p>        
-      </div>      
-
        {/* 4 */}
        {/* 5 */}
+       <button onClick={()=>{ setmodalVar(true)}}>modal show</button>
       {
         modalVar ===true
         ?<Modal></Modal>
         :null        
       }
+
+      {/* 6 */}
+      {
+        title.map(function(a,i){
+          return <div className="list">
+          <h3 >{ title[i] }</h3>
+          <button onClick={()=>{setThumb(thumb+1)}}>👍</button> {thumb}
+          <p>Feb 20</p>        
+        </div>   
+        })
+      }
+
 
     </div>
   );
