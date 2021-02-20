@@ -1,12 +1,72 @@
+/* IG kim -setting */
+*{
+  overflow-x: hidden;
+  max-width: 900px;
+}
+
 .App {
-  text-align: center;
+  /* text-align: center; */
+  font-size: 1rem;
+}
+
+
+/* 03 JSX를 이용해 HTML 페이지 제작 */
+.black-nav {
+  background : black;
+  width : 100%;
+  display : flex;
+  color : white;
+  padding : 20px;
+  font-weight : 600;
+  font-size : 20px;
 }
 
 .App-logo {
+  width: 20%;
   height: 40vmin;
   pointer-events: none;
 }
 
+.img1{
+  width: 10%;
+}
+
+/* 04 중요한 데이터는 변수말고 state로 만들랬죠 */
+.list {
+  margin-top : 30px;
+  text-align : left;
+  padding-left : 20px;
+  padding-right : 20px;
+}
+
+/* 07 Component : 많은 div들을 한 단어로 줄이고 싶은 충동이 들 때 */
+.modal{
+  margin-top: 20px;
+  padding: 20px;
+  background: grey;
+}
+
+/* 13 input 다루기 2 : 블로그 글발행 기능 만들기 */
+.publish {
+  margin-top : 30px;
+  margin-bottom : 30px;
+}
+.publish input {
+  padding : 10px;
+  font-size : 16px;
+  border-radius : 5px;
+  width : 80%;
+  border : 1px solid grey;
+}
+.publish button {
+  display : block;
+  margin : auto;
+  margin-top : 10px;
+}
+
+
+
+/*  */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -22,6 +82,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  max-width: 800px;
 }
 
 .App-link {
