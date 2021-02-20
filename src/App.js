@@ -16,6 +16,10 @@ function App() {
   {/* 5 */}
   const [modalVar, setmodalVar] = useState(false);
 
+  
+  {/* 8 */}
+  const [clickedtitle, setclickedtitle] = useState(0);
+
 
   return (
     <div className="App">
@@ -23,13 +27,14 @@ function App() {
         <div>Shoping shoes</div>
       </div>
 
-     
 
       {/* 6 */}
       {
         title.map(function(a,i){
           return <div className="list">
-          <h3 >{a}</h3>
+          
+          {/* 8 */} 
+          <button onClick={()=>{ setclickedtitle(i)}} >{a}</button>
           {/* 1 */}
           <button onClick={()=>{setThumb(thumb+1)}}>👍</button> {thumb}
           <p>Feb 20</p>        
@@ -37,12 +42,19 @@ function App() {
         })
       }
 
-      {/* 4 */}
-       {/* 5 */}
+      {/* 8 */}
+{/*     <button onClick={()=>{setclickedtitle(0)}}> btn 1 </button>
+    <button onClick={()=>{setclickedtitle(1)}}> btn 2 </button>
+    <button onClick={()=>{setclickedtitle(2)}}> btn 3 </button>
+ */}
+
+      {/* 4 */}       
+      {/* 5 */}      
+      {/* 8 click btn and chage title in modal component*/}
        <button onClick={()=>{ setmodalVar(true)}}>modal show</button>
       {
         modalVar ===true
-        ?<Modal titleNaming={title}></Modal>
+        ?<Modal titleNaming={title} clickedtitleNaming={clickedtitle}></Modal>
         :null        
       }
 
@@ -54,7 +66,8 @@ function App() {
 function Modal(props){
   return(
     <div className="modal">
-    <h2>제목 : {props.titleNaming[0]}</h2>
+          {/* 8 */}
+    <h2>제목 : {props.titleNaming[props.clickedtitleNaming]}</h2>
     <p>날짜</p>
     <p>상세내용</p>
   </div>
