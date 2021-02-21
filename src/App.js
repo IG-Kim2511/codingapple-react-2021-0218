@@ -20,9 +20,13 @@ function App() {
   {/* 8 */}
   const [clickedtitle, setclickedtitle] = useState(0);
 
+  {/* 10 입력값 */}
+  const [inputvalue, setinputvalue] = useState('')
 
+  
   return (
     <div className="App">
+    
       <div className="black-nav">
         <div>Shoping shoes</div>
       </div>
@@ -31,7 +35,7 @@ function App() {
       {/* 6 */}
       {
         title.map(function(a,i){
-          return <div className="list">
+          return <div className="list" key={i}>
           
           {/* 8 */} 
           <button onClick={()=>{ setclickedtitle(i)}} >{a}</button>
@@ -43,20 +47,33 @@ function App() {
       }
 
       {/* 8 */}
-{/*     <button onClick={()=>{setclickedtitle(0)}}> btn 1 </button>
-    <button onClick={()=>{setclickedtitle(1)}}> btn 2 </button>
-    <button onClick={()=>{setclickedtitle(2)}}> btn 3 </button>
- */}
+      {/*   
+          <button onClick={()=>{setclickedtitle(0)}}> btn 1 </button>
+          <button onClick={()=>{setclickedtitle(1)}}> btn 2 </button>
+          <button onClick={()=>{setclickedtitle(2)}}> btn 3 </button>
+      */}
+
+      {/* 10 input 1 */}
+      <input onChange={(e)=>{ setinputvalue(e.target.value)}}></input>
+      <p> inputvalue : {inputvalue}</p>
+      
+
 
       {/* 4 */}       
       {/* 5 */}      
       {/* 8 click btn and chage title in modal component*/}
        <button onClick={()=>{ setmodalVar(true)}}>modal show</button>
+
+
       {
         modalVar ===true
         ?<Modal titleNaming={title} clickedtitleNaming={clickedtitle}></Modal>
         :null        
       }
+
+
+
+
 
     </div>
   );
