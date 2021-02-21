@@ -55,13 +55,31 @@ function App() {
 
       {/* 10 input 1 */}
       <input onChange={(e)=>{ setinputvalue(e.target.value)}}></input>
-      <p> inputvalue : {inputvalue}</p>
+      <p> e.target.value : {inputvalue}</p>
       
 
+
+      {/* 12 */}    
+      <div className="publish">
+        <input onChange={(e)=>{setinputvalue(e.target.value)}}></input>
+
+        <button onClick={()=>{  
+          setTitle([inputvalue,'남자 코트 추천', '강남 우동 맛집', '파이썬 독학'])
+        }}>save</button>
+
+
+        <button onClick={()=>{  
+          
+          let arraycopy =[...title];
+          arraycopy.unshift(inputvalue);
+          setTitle(arraycopy);
+        }}>save2</button>
+      </div>
 
       {/* 4 */}       
       {/* 5 */}      
       {/* 8 click btn and chage title in modal component*/}
+
        <button onClick={()=>{ setmodalVar(true)}}>modal show</button>
 
 
